@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Category</title>
+
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+</head>
+<body>
+
+	<div id="subCategoryDetailPage" data-role="page" >
+
+		<div data-role="header" style="text-align: left;font-size: 18px; height: 35px">
+			<h1 id="h1-subCategoryDetailMode">หมวดหมู่ย่อย เพิ่ม/แก้ไข</h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+			<div class="content-primary">
+				<form id="categoryDialogForm">
+					<div data-role="fieldcontain">
+						<label for="categoryName">หมวดหลัก :</label>
+						<input type="text" name="categoryName" id="categoryName" value="" />
+					</div>
+					<div data-role="fieldcontain">
+						<label for="categoryName">ชื่อหมวดหมู่ย่อย :</label>
+						<input type="text" name="subCategoryName" id="subCategoryName" value="" />
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+					    	<legend>ประเภท:</legend>
+					         	<input type="radio" name="radio-subCategoryType" id="radio-subCategoryType1" value="N" checked="checked" />
+					         	<label for="radio-subCategoryType1">พื้นฐาน</label>
+					
+					         	<input type="radio" name="radio-subCategoryType" id="radio-subCategoryType2" value="D"  />
+					         	<label for="radio-subCategoryType2">ขั้นสูง</label>
+					    </fieldset>
+					</div>
+					<div  data-role="fieldcontain">
+					 	<fieldset data-role="controlgroup">
+							<legend></legend>
+							<input type="checkbox" name="checkbox-necessary" id="checkbox-necessary" class="custom" />
+							<label for="checkbox-necessary">จำเป็น</label>
+		
+							<input type="checkbox" name="checkbox-expensive" id="checkbox-expensive" class="custom" />
+							<label for="checkbox-expensive">ฟุ่มเฟือย</label>
+					    </fieldset>
+					</div>
+					<div  data-role="fieldcontain">
+					 	<fieldset data-role="controlgroup">
+							<input type="checkbox" name="checkbox-defname1" id="checkbox-defname1" class="custom" />
+							<label for="checkbox-defname1">ใช้ข้อมูลเพิ่ม 1</label>
+							<input type="text" name="defname1" id="defname1" value="" />
+					    </fieldset>
+					</div>
+					<div  data-role="fieldcontain">
+					 	<fieldset data-role="controlgroup">
+							<input type="checkbox" name="checkbox-defname2" id="checkbox-defname2" class="custom" />
+							<label for="checkbox-defname2">ใช้ข้อมูลเพิ่ม 2</label>
+							<input type="text" name="defname2" id="defname2" value="" />
+					    </fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<button type="button" name="saveButton" value="บันทึก" onclick="saveSubCategory()">บันทึก</button>
+						<button type="button" name="cancelButton" value="ยกเลิก" onclick="canceSublCategory()">ยกเลิก</button>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+		<!-- /content -->
+		<!-- /footer -->
+		
+		<script src="js/phetbud-subcategory-detail.js"></script>
+	</div>
+	<!-- /page -->
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="tis-620">
+<title>Confirm Transaction</title>
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	
+</head>
+<body>
+		<div data-role="page" id="transactionConfirmPage" data-theme="d">
+			<div data-role="header">
+				<h1>Confirm?</h1>
+			</div>
+
+			<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+				<label id="lblCheckRecurr" for="checkbox-recurr"><input type="checkbox" name="checkbox-recurr" id="checkbox-recurr" />create advance transaction?</label>
+				
+					<div id="div-tranRecurrType" data-role="fieldcontain" style="display:none">
+						<label for="select-tranRecurrType" class="select">Recurr Type:</label>
+						<select name="select-tranRecurrType" id="select-tranRecurrType">
+						   <option value="D">everyday</option>
+						   <option value="W">by date</option>
+						   <option value="M">by day</option>
+						</select>
+					</div>
+					<div id="div-ByDate" data-role="fieldcontain" style="display:none" class="ui-bar-d">
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<label><input type="checkbox" name="checkbox-monday" id="checkbox-monday" />จันทร์</label>
+							</div>
+							<div class="ui-block-b">
+								<label><input type="checkbox" name="checkbox-tuesday" id="checkbox-tuesday" />อังคาร</label>
+							</div>
+						</div>
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<label><input type="checkbox" name="checkbox-wednesday" id="checkbox-wednesday" />พุธ</label>
+							</div>
+							<div class="ui-block-b">
+								<label><input type="checkbox" name="checkbox-thursday" id="checkbox-thursday" />พฤหัสฯ</label>
+							</div>
+						</div>
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<label><input type="checkbox" name="checkbox-friday" id="checkbox-friday" />ศุกร์</label>
+							</div>
+							<div class="ui-block-b">
+								<label><input type="checkbox" name="checkbox-saturnday" id="checkbox-saturnday" />เสาร์</label>
+							</div>
+						</div>
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<label><input type="checkbox" name="checkbox-sunday" id="checkbox-sunday" />อาทิตย์</label>
+							</div>
+							<div class="ui-block-b">
+								<p>&nbsp;</p>
+							</div>
+						</div>
+					</div>
+					<div id="div-byDay" style="display:none">
+						<div data-role="fieldcontain" class="ui-grid-a">
+							<label for="basic">every : </label>
+							<input type="text" name="txtByDay" id="txtByDay" value="" data-mini="true" />
+						</div>
+						<div data-role="fieldcontain" class="ui-grid-a">
+							<p>input format 1,15</p>
+						</div>
+					</div>
+					<div id="div-recurrStartDate" data-role="fieldcontain" style="display:none">
+						<label for="transRecurrStartDateBox">Recurr Start Date : </label>
+						<input name="transRecurrStartDateBox" id="transRecurrStartDateBox" type="text" data-role="datebox" data-options='{"useClearButton": true, "mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+					</div>
+					<div id="div-recurrEndDate" data-role="fieldcontain" style="display:none">
+						<label for="transRecurrEndDateBox">Recurr End Date : </label>
+						<input name="transRecurrEndDateBox" id="transRecurrEndDateBox" type="text" data-role="datebox" data-options='{"useClearButton": true, "mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+					</div>
+				
+				<div>
+					<p>Save?</p>
+				</div>
+				<a href="#" data-role="button" data-inline="true" data-theme="c" onclick="ConfirmSave()">Yes</a>    
+				<a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="b">No</a>  
+			</div>
+			
+			<script src="js/phetbud-transaction-confirm.js"></script>
+		</div><!-- /page one -->
+</body>
+</html>

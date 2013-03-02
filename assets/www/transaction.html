@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="tis-620">
+  <title>TransactionDetail</title>
+  
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" /> -->
+  <meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+  </head>
+  <body>
+  
+  
+		<!-- Start of first page: #one -->
+		<div data-role="page" id="transactionPage" data-dom-cache="true">
+			<div data-role="header">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#" data-icon="back" iconpos="left" data-inline="true" onclick="javascript:backToPrevPage()">Cancel</a></li>
+						<li style="text-align: center;vertical-align: middle;display: inline;"><label id="transactionDateHeaderLabel" style="text-align: center;vertical-align: middle;display: inline;">Transaction Date </label></li>
+						<li><a href="#" data-icon="check" iconpos="right" data-inline="true" onclick="javascript:saveTransaction()">Save</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div>
+
+			<div data-role="content" >
+				<div class="content-primary">
+					<form id="transactionForm">
+						<div data-role="fieldcontain">
+						    <fieldset data-role="controlgroup">
+						    	<legend>Transaction Types:</legend>
+						         	<input type="radio" name="radio-transactionType" id="radio-transactionType1" value="0" checked="checked" />
+						         	<label for="radio-transactionType1">income</label>
+						
+						         	<input type="radio" name="radio-transactionType" id="radio-transactionType2" value="1"  />
+						         	<label for="radio-transactionType2">expense</label>
+						
+						         	<input type="radio" name="radio-transactionType" id="radio-transactionType3" value="2"  />
+						         	<label for="radio-transactionType3">Transfer</label>
+						    </fieldset>
+						</div>
+						<div data-role="fieldcontain">
+							<label for="selectAccountId">Account ID : </label>
+							<select name="selectAccountId" id="selectAccountId" data-native-menu="false">
+							</select>
+						</div>
+						<div data-role="fieldcontain" id="div-AccountIdTo" style="display:none">
+							<label for="selectAccountIdTo">Account ID to : </label>
+							<select name="selectAccountIdTo" id="selectAccountIdTo" data-native-menu="false">
+							</select>
+						</div>
+						<div data-role="fieldcontain" style="display:none">
+							<label for="selectSubCategories">SubCategory ID : </label>
+							<select name="selectSubCategories" id="selectSubCategories" data-native-menu="false" >
+							</select>
+						</div>
+						<div data-role="fieldcontain" >
+							<label for="aSubCategories">SubCategory ID : </label>
+							<button type="button" name="aSubCategories" id="aSubCategories" data-icon="arrow-d" data-iconpos="right" onclick="aSubCatOnclick();"></button>
+						</div>
+						<div data-role="fieldcontain">
+							<label for="transactionDateBox">Date : </label>
+							<input name="transactionDateBox" id="transactionDateBox" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+						</div>
+						<div data-role="fieldcontain">
+							<label for="transactionAmount">Amount : </label>
+							<input type="number" name="transactionAmount" pattern="^\d+\.\d{2}$" id="transactionAmount" value="" placeholder="amount" />
+							<!-- <input type="text" name="transactionAmount" id="transactionAmount" value="" /> -->
+						</div>
+						<div data-role="fieldcontain">
+							<label for="transactionRemark">Remark :</label>
+							<textarea name="transactionRemark" id="transactionRemark"></textarea>
+						</div>
+						<div data-role="fieldcontain" style="display:none">
+						    <fieldset data-role="controlgroup" data-type="horizontal">
+						    	<legend>status:</legend>
+						         	<input type="radio" name="radio-transActiveStatus" id="radio-transActiveStatus1" value="Y" checked="checked" />
+						         	<label for="radio-transActiveStatus1">Active</label>
+						
+						         	<input type="radio" name="radio-transActiveStatus" id="radio-transActiveStatus2" value="N"  />
+						         	<label for="radio-transActiveStatus2">Inactive</label>
+						    </fieldset>
+						</div>
+						<div data-role="fieldcontain" style="display:none">
+							<label for="transActiveDateBox">Active Date : </label>
+							<input name="transActiveDateBox" id="transActiveDateBox" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+						</div>
+						<div data-role="fieldcontain" id="div-buttonAddMode">
+							<a id="confirmDialog" href="transactionConfirm.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop" style="display: none;">Save</a>
+							<button type="button" name="saveButton" value="save" onclick="saveTransaction()">Save</button>
+						</div>
+						<div data-role="fieldcontain" id="div-buttonEditMode" style="display:none">
+							<button type="button" name="editButton" value="edit" onclick="editTransaction()">Edit</button>
+							<a id="deleteDialog" href="transactionDelete.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop" style="display: none;">Delete</a>
+							<button type="button" name="deleteButton" value="delete" onclick="deleteTransaction()">Delete</button>
+						</div>
+					</form>
+				</div>
+			</div><!-- /content -->
+			
+			<!-- popup subcat -->
+			<div data-role="popup" id="popupSubCat" >
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<div id="div-subcatpopup" data-role="content">
+				</div>
+			</div>
+			
+			<script src="js/phetbud-transaction.js"></script>
+		</div><!-- /page one -->
+  </body>
+  
+</html>

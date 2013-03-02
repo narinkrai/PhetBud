@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>PHETBud Serup Page</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+
+  <link rel="stylesheet"  href="css/jquery.mobile.structure.css" />
+  <link rel="stylesheet" href="css/jquery.mobile.theme.css" />
+  
+  <script>
+    var userAgent = navigator.userAgent + '';
+    if (userAgent.indexOf('iPhone') > -1) {
+      document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
+      var mobile_system = 'iphone';
+    } else if (userAgent.indexOf('Android') > -1) {
+      document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+      var mobile_system = 'android';
+    } else {
+      var mobile_system = '';
+    }
+	
+	function OnPHETBudPageLoaded()
+	{
+		setTimeout(function() {
+		
+		//$.mobile.loading( 'show', {
+		//			text: 'initial application ...',
+		//			textVisible: 'true',
+		//			theme: 'a',
+		//			textonly: 'false',
+		//			html: ''
+		//	});
+		
+		// rest of code here
+		
+		//$.mobile.loading( 'hide' );
+		}, 2000);
+		
+	}
+  </script>
+  
+  <script src="js/lib/jquery.js"></script>
+  <!-- your scripts here -->
+  <script src="js/app/app.js"></script>
+  <script src="js/app/bootstrap.js"></script>
+  <script src="js/lib/jquery.mobile.js"></script>
+  
+  </head>
+  <body>
+		<!-- Start of first page: #one -->
+		<div data-role="page" id="one">
+			<div data-role="content" >	
+				<!-- <img src="http://static.jquery.com/files/rocker/images/logo_jquery_215x53.gif" width="100%" id="phetbudlogo"/> -->
+			</div><!-- /content -->
+		</div><!-- /page one -->
+  </body>
+</html>

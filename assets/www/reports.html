@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="tis-620">
+<title>PHETBud Program</title>
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+</head>
+<body> 
+<!-- Home -->
+<div data-role="page" id="reportsPage">
+    <div data-theme="c" data-role="header">
+        <h3>
+            ข้อมูลรายงาน
+        </h3>
+    </div>
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <label for="selectmenu1">
+            </label>
+            <select name="Reports" id="Reports" data-native-menu="true">
+                <option value="Report1">
+                    สรุปข้อมูลรายจ่ายแยกตามหมวดหมู่หลัก
+                </option>
+                <option value="Report2">
+                    สรุปข้อมูลรายจ่ายแยกตามหมวดหมู่หลัก/รอง
+                </option>
+                <option value="Report3">
+                     แผนภาพวงกลมแสดงข้อมูลรายจ่ายแยกตามหมวดหมู่หลัก
+                </option>
+                <option value="Report4">
+                    เปรียบเทียบข้อมูลรายจ่าย ประมาณการ และเงินออม
+                </option>
+            </select>
+        </div>
+        <div id="collapsible" data-role="collapsible-set">
+            <div data-role="collapsible">
+                <h3>
+                    ช่วงวันที่
+                </h3>
+                <div data-role="fieldcontain">
+					<label for="transactionDateBox">จาก : </label>
+					<input name="transactionDateBox" id="FromDateBox" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+				</div>
+                <div data-role="fieldcontain">
+					<label for="transactionDateBox">ถึง: </label>
+					<input name="transactionDateBox" id="ToDateBox" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+				</div>
+				
+            </div>
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>
+                    ระบุเดือน
+                </h3>
+                <div data-role="fieldcontain">
+					<label for="transactionDateBox">เดือนปี: </label>
+					<input name="transactionDateBox" id="PeriodDateBox" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+				</div>              
+            </div>
+            
+            <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="toggleswitch3">
+                            ระบุเฉพาะหมวดหมู่หลัก
+                        </label>
+                        <select name="toggleswitch3" id="toggleswitch3" data-theme="" data-role="slider">
+                            <option value="off">
+                                Off
+                            </option>
+                            <option value="on">
+                                On
+                            </option>
+                        </select>
+                    </fieldset>
+                </div>
+                <div data-role="fieldcontain">
+                    <label for="selectmenu2">
+                    </label>
+                    <select name="Categories" id="Categories" data-native-menu="true">
+                        <option value="1">
+                            ค่าใช้จ่ายประจำวัน
+                        </option>
+                    </select>
+                </div>
+                <input id="ShowReport" type="submit" data-inline="true" data-icon="plus"
+                data-iconpos="left" value="แสดงผล" data-mini="true">
+                <input id="Back" type="submit" data-inline="true" data-icon="back" data-iconpos="left"
+                value="ยกเลิก" data-mini="true" onclick="javascript:backToPrevPage()">
+                <input id="Clear" type="submit" data-inline="true" data-icon="minus" data-iconpos="left"
+                value="ล้าง" data-mini="true" >
+            
+        </div>
+        <script src="js/phetbud-report-condition.js"></script>
+    </div>
+</div>
+</body>
+</html>

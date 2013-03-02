@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<title>Accounts</title>
+</head>
+<body>
+	<div id="accountDetailPage" data-role="page" data-dom-cache="false">
+		<div data-role="header">
+			<a href="accounts.html" data-icon="arrow-l" class="ui-btn-left">Back</a>
+			<h1>Account Details</h1>
+			
+			<div id="div-editheader">
+				<h5 id="accountDetailStatus" align="center">Add Account</h5>
+			</div>
+		</div><!-- /header -->
+		
+		<div data-role="content">
+			<div class="content-primary">
+				<form id="accountDetailForm">
+					<div data-role="fieldcontain">
+					    <fieldset data-role="controlgroup">
+					    	<legend>ประเภทบัญชี:</legend>
+					         	<input type="radio" name="radio-accountType" id="radio-accountType1" value="1" checked="checked" />
+					         	<label for="radio-accountType1">เงินสด</label>
+					
+					         	<input type="radio" name="radio-accountType" id="radio-accountType2" value="2"  />
+					         	<label for="radio-accountType2">ออมทรัพย์</label>
+					
+					         	<input type="radio" name="radio-accountType" id="radio-accountType3" value="3"  />
+					         	<label for="radio-accountType3">เช็ค</label>
+					    </fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="accountName">ชื่อบัญชี :</label>
+						<input type="text" name="accountName" id="accountName" value="" />
+					</div>
+					<div data-role="fieldcontain">
+						<label for="accountOpenBalance">เงินตั้งต้น : </label>
+						<input type="number" name="accountOpenBalance" pattern="^\d+\.\d{2}$" id="accountOpenBalance" value="" placeholder="amount" />
+					</div>
+					<div data-role="fieldcontain" >
+						<label for="accountIconImageButton">รูปภาพ : </label>
+						<input type="hidden" name="accountIconName" id="accountIconName" value="" />
+						<a href="#popupAccountImage" data-rel="popup" id="accountIconImageButton" type="button" style="height: 55px;" data-position-to="window"> Select Picture... </a>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="accountOrderNo">ลำดับ : </label>
+						<input type="number" name="accountOrderNo" pattern="^\d+\$" id="accountOrderNo" value="" placeholder="order" />
+					</div>
+					<div data-role="fieldcontain" id="div-accountBalanceCurAmount" style="display:none">
+						<label for="accountBalanceCurAmount">เงินคงเหลือ : </label>
+						<input type="number" name="accountBalanceCurAmount" pattern="^\d+\.\d{2}$" id="accountBalanceCurAmount" value="" placeholder="amount" />
+					</div>
+					<div data-role="fieldcontain" id="div-accountBalancePeriodDateBox" style="display:none">
+						<label for="accountBalancePeriodDateBox">ระยะเวลา : </label>
+						<input name="accountBalancePeriodDateBox" id="accountBalancePeriodDateBox" type="text" data-role="datebox" data-options='{"mode":"calbox", "useNewStyle":true, "useFocus":true}' />
+					</div>
+					<div data-role="fieldcontain" id="div-accountBalanceAccuInAmount" style="display:none">
+						<label for="accountBalanceAccuInAmount">เงินเข้า : </label>
+						<input type="number" name="accountBalanceAccuInAmount" pattern="^\d+\.\d{2}$" id="accountBalanceAccuInAmount" value="" placeholder="amount" />
+					</div>
+					<div data-role="fieldcontain" id="div-accountBalanceAccuOutAmount" style="display:none">
+						<label for="accountBalanceAccuOutAmount">เงินออก : </label>
+						<input type="number" name="accountBalanceAccuOutAmount" pattern="^\d+\.\d{2}$" id="accountBalanceAccuOutAmount" value="" placeholder="amount" />
+					</div>
+					<div data-role="fieldcontain" id="div-buttonAddMode">
+						<button type="button" name="saveButton" value="save" onclick="saveAccount()">Save</button>
+					</div>
+					<div data-role="fieldcontain" id="div-buttonEditMode" style="display:none">
+						<button type="button" name="editButton" value="edit" onclick="editAccount()">Edit</button>
+					</div>
+				</form>
+			</div>
+		</div><!-- /content -->
+		
+		<!-- popup accountImage -->
+		<div data-role="popup" id="popupAccountImage" >
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<div data-role="content">
+				
+				<div class="ui-bar-d">
+					<div class="ui-grid-b">
+						<div class="ui-block-a" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external" ><img src="res/icon/android/10ExpenseDaily-mdpi.png" alt="Image 001" /></a>
+						</div>
+						<div class="ui-block-b" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/11ExpenseFood-mdpi.png')" rel="external"><img src="res/icon/android/11ExpenseFood-mdpi.png" alt="Image 002" /></a>
+						</div>
+						<div class="ui-block-c" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/12ExpenseTransport-mdpi.png')" rel="external"><img src="res/icon/android/12ExpenseTransport-mdpi.png" alt="Image 003" /></a>
+						</div>
+					</div>
+					<div class="ui-grid-b">
+						<div class="ui-block-a" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/10ExpenseDaily-mdpi.png" alt="Image 001" /></a>
+						</div>
+						<div class="ui-block-b" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/11ExpenseFood-mdpi.png" alt="Image 002" /></a>
+						</div>
+						<div class="ui-block-c" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/12ExpenseTransport-mdpi.png" alt="Image 003" /></a>
+						</div>
+					</div>
+					<div class="ui-grid-b">
+						<div class="ui-block-a" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/10ExpenseDaily-mdpi.png" alt="Image 001" /></a>
+						</div>
+						<div class="ui-block-b" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/11ExpenseFood-mdpi.png" alt="Image 002" /></a>
+						</div>
+						<div class="ui-block-c" align="center" style="width: 55px">
+							<a href="javascript:onClickAccountImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/12ExpenseTransport-mdpi.png" alt="Image 003" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div> <!-- /popup accountImage -->
+		
+		<script src="js/phetbud-account-detail.js"></script>
+	</div>
+	
+</body>
+</html>

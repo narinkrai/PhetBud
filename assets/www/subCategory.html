@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>SubCategory</title>
+
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+</head>
+<body>
+
+	<div id="subCategoryPage" data-role="page" >
+
+		<div data-role="header">
+			<a href="javascript:backToPrevPage()" data-icon="arrow-l" class="ui-btn-left">Back</a>
+			<h1>หมวดหมู่ย่อย</h1>
+		</div>
+		<!-- /header -->
+
+		<div id="div-categorylist" data-role="content">
+			<div data-role="fieldcontain">
+				<h4 id="h4-subcategoryName">รายจ่าย  ค่าใช้จ่ายประจำวัน </h4>
+			</div>
+			<ul id="listview-subcat" data-role="listview">
+			</ul>
+		</div>
+		<div id="div-hiddenpopup" style="display: none;">
+			<a href="#popupSubCategory" data-rel="popup" data-role="button" data-icon="grid" data-iconpos="left" data-position-to="window" >Menu</a>
+		</div>
+		<!-- /content -->
+		
+		<!-- popup menu -->
+		<div data-role="popup" id="popupSubCategory" data-theme="a" >
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<div class="ui-bar ui-bar-b">
+				<h1 id="h1-popupSubCategoryName">ค่าอาหาร</h1>
+			</div>
+			<div data-role="content" style="min-width: 350px">
+				<br>
+				<br>
+				<div data-role="controlgroup">
+					<button type="button" name="editCategoryButton" value="แก้ไขรายการ" onclick="onClickEditSubCategory()">แก้ไขรายการ</button>
+					<button type="button" name="deleteCategoryButton" value="ลบรายการ" onclick="onClickDeleteSubCategory()">ลบรายการ</button>
+				</div>
+				<br>
+				<button type="button" name="closePopupButton" value="ย้อนกลับ" onclick="onClickCloseDialog()">ย้อนกลับ</button>
+			</div>
+		</div>
+		
+		<script src="js/phetbud-subcategory.js"></script>
+	</div>
+	<!-- /page -->
+
+</body>
+</html>

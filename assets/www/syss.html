@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PHETBud Program</title>
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+</head>
+<body>
+
+	<div data-role="page" id="syssPage" data-dom-cache="true">
+		<div data-role="header" data-position="fixed">
+			
+			<!-- /navbar -->
+			<div class="ui-bar-d">
+				<h3>ติดตั้งค่า</h3>
+			</div>
+			
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" onclick="onClickGeneral(); return false" >ทั่วไป</a></li>
+					<li><a href="#" onclick="onClickOther(); return false" >อื่นๆ</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /header -->
+		<div>
+			<div id="div-general" data-role="content">
+				<div data-role="fieldcontain">
+					<label>เปิดใช้รหัสผ่านเข้าโปรแกรม : </label>
+				</div>
+				<div data-role="fieldcontain">
+				    <fieldset data-role="controlgroup" data-type="horizontal">
+				         	<input type="radio" name="radio-enableSecureMode" id="radio-enableSecureMode1" value="1" checked="checked" />
+				         	<label for="radio-enableSecureMode1">On</label>
+				
+				         	<input type="radio" name="radio-enableSecureMode" id="radio-enableSecureMode2" value="0"  />
+				         	<label for="radio-enableSecureMode2">Off</label>
+				    </fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<input type="password" name="sysPassword" id="sysPassword" value="" />
+				</div>
+				<div data-role="fieldcontain">
+					<label>ยืนยันรหัสผ่าน : </label>
+					<input type="password" name="reSysPassword" id="reSysPassword" value="" />
+				</div>
+				<div data-role="fieldcontain">
+					<label>ที่อยู่จัดเก็บข้อมูลสำรอง : </label>
+					<input type="text" name="sysBackupPath" id="sysBackupPath" value="" />
+					<a href="fileBrowser.html" id="browseBtn" data-role="button" data-inline="true">Browse</a>
+				</div>
+				<div data-role="fieldcontain">
+					<div class="ui-grid-a">
+						<div class="ui-block-a" align="center">
+							<a id="exportbutton" href="javascript:onclickExport()" data-role="button">สำรองข้อมูล</a>
+						</div>
+						<div class="ui-block-b" align="center">
+							<a id="importbutton" href="javascript:onclickImport()" data-role="button" >นำเข้า</a>
+						</div>
+					</div>
+				</div>
+				<div data-role="fieldcontain">
+					<label id="label-sysProgramVersion"></label>
+				</div>
+				<div data-role="fieldcontain">
+					<label id="label-sysDatabaseVersion"></label>
+				</div>
+				<div data-role="fieldcontain">
+					<label id="label-sysDatabaseCreateDate"></label>
+				</div>
+				<div data-role="fieldcontain">
+					<label id="label-sysDatabaseLatestDate"></label>
+				</div>
+			</div>
+			<div id="div-other" data-role="content">
+				<div data-role="fieldcontain">
+					<label>เปิดใช้ข้อมูลขั้นสูง : </label>
+				</div>
+				<div data-role="fieldcontain">
+				    <fieldset data-role="controlgroup" data-type="horizontal">
+				         	<input type="radio" name="radio-sysType" id="radio-sysType1" value="N" checked="checked" />
+				         	<label for="radio-sysType1">On</label>
+				
+				         	<input type="radio" name="radio-sysType" id="radio-sysType2" value="D"  />
+				         	<label for="radio-sysType2">Off</label>
+				    </fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<label>เปิดแสดงหน้าต่างยืนยันการจัดเก็บ : </label>
+				</div>
+				<div data-role="fieldcontain">
+				    <fieldset data-role="controlgroup" data-type="horizontal">
+				         	<input type="radio" name="radio-showMessageDlg" id="radio-showMessageDlg1" value="1" checked="checked" />
+				         	<label for="radio-showMessageDlg1">On</label>
+				
+				         	<input type="radio" name="radio-showMessageDlg" id="radio-showMessageDlg2" value="0"  />
+				         	<label for="radio-showMessageDlg2">Off</label>
+				    </fieldset>
+				</div>
+				<div data-role="fieldcontain">
+					<label>ประมาณการรายได้ : </label>
+					<input type="number" name="sysSetupIncome" pattern="^\d+\.\d{2}$" id="sysSetupIncome" value="" placeholder="amount" />
+				</div>
+				<div data-role="fieldcontain">
+					<label>ประมาณการรายจ่ายจำเป็น : </label>
+					<input type="number" name="sysSetupNecessary" pattern="^\d+\.\d{2}$" id="sysSetupNecessary" value="" placeholder="amount" />
+				</div>
+				<div data-role="fieldcontain">
+					<label>ประมาณการรายจ่ายฟุ่มเฟือย : </label>
+					<input type="number" name="sysSetupExpensive" pattern="^\d+\.\d{2}$" id="sysSetupExpensive" value="" placeholder="amount" />
+				</div>
+				<div data-role="fieldcontain">
+					<label>ประมาณการเงินออม : </label>
+					<input type="number" name="sysSetupSaving" pattern="^\d+\.\d{2}$" id="sysSetupSaving" value="" placeholder="amount" />
+				</div>
+			</div>
+			<div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a" align="center">
+						<a id="saveButton" href="javascript:saveSys()" data-role="button">บันทึก</a>
+					</div>
+					<div class="ui-block-b" align="center">
+						<a id="cancelButton" href="javascript:cancelSys()" data-role="button" >ยกเลิก</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /content -->
+		
+		<script src="js/phetbud-syss.js"></script>
+	</div>
+	<!-- /page -->
+
+</body>
+</html>

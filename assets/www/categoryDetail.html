@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Category</title>
+
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+</head>
+<body>
+
+	<div id="categoryDetailPage" data-role="page" >
+
+		<div data-role="header" style="text-align: left;font-size: 18px; height: 35px">
+			<h1 id="h1-categoryDetailMode">หมวดหมู่หลัก เพิ่ม/แก้ไข</h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">
+			<div class="content-primary">
+				<form id="categoryDialogForm">
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+					    	<legend>ประเภท:</legend>
+					         	<input type="radio" name="radio-categoryType" id="radio-categoryType1" value="0" checked="checked" />
+					         	<label for="radio-categoryType1">รายรับ</label>
+					
+					         	<input type="radio" name="radio-categoryType" id="radio-categoryType2" value="1"  />
+					         	<label for="radio-categoryType2">รายจ่าย</label>
+					
+					         	<input type="radio" name="radio-categoryType" id="radio-categoryType3" value="2"  />
+					         	<label for="radio-categoryType3">โอนยอดไป</label>
+					    </fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="categoryName">ชื่อหมวดหมู่หลัก :</label>
+						<input type="text" name="categoryName" id="categoryName" value="" />
+					</div>
+					<div data-role="fieldcontain">
+						<label id="lbl-budgets">งบประมาณ</label>
+						<input type="number" name="budgetTarget" pattern="^\d+\.\d{2}$" id="budgetTarget" value="" placeholder="amount" />
+					</div>
+					<div data-role="fieldcontain" >
+						<label for="categoryIconImageButton">รูปภาพ : </label>
+						<input type="hidden" name="categoryIconName" id="categoryIconName" value="" />
+						<a href="#popupCategoryImage" data-rel="popup" id="categoryIconImageButton" type="button" style="height: 55px;" data-position-to="window"> Select Picture... </a>
+					</div>
+				</form>
+			</div>
+			
+		</div>
+		<!-- /content -->
+
+		<div data-role="footer">
+			<div data-role="navbar">
+				<ul>
+					<li>&nbsp;</li>
+					<li><a href="javascript:saveCategory()">บันทึก</a></li>
+					<li><a href="javascript:cancelCategory()">ยกเลิก</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /footer -->
+		
+		<!-- popup categoryImage -->
+		<div data-role="popup" id="popupCategoryImage" >
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+			<div data-role="content">
+				
+				<div class="ui-bar-d">
+					<div class="ui-grid-c">
+						<div class="ui-block-a" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external" ><img src="res/icon/android/10ExpenseDaily-mdpi.png" alt="Image 001" /></a>
+						</div>
+						<div class="ui-block-b" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/11ExpenseFood-mdpi.png')" rel="external"><img src="res/icon/android/11ExpenseFood-mdpi.png" alt="Image 002" /></a>
+						</div>
+						<div class="ui-block-c" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/12ExpenseTransport-mdpi.png')" rel="external"><img src="res/icon/android/12ExpenseTransport-mdpi.png" alt="Image 003" /></a>
+						</div>
+						<div class="ui-block-d" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/13ExpenseHouse-mdpi.png')" rel="external"><img src="res/icon/android/13ExpenseHouse-mdpi.png" alt="Image 004" /></a>
+						</div>
+					</div>
+					<div class="ui-grid-c">
+						<div class="ui-block-a" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/20ExpensePersonal-mdpi.png')" rel="external"><img src="res/icon/android/20ExpensePersonal-mdpi.png" alt="Image 001" /></a>
+						</div>
+						<div class="ui-block-b" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/21ExpenseClothes-mdpi.png')" rel="external"><img src="res/icon/android/21ExpenseClothes-mdpi.png" alt="Image 002" /></a>
+						</div>
+						<div class="ui-block-c" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/21ExpenseEntertain-mdpi.png')" rel="external"><img src="res/icon/android/21ExpenseEntertain-mdpi.png" alt="Image 003" /></a>
+						</div>
+						<div class="ui-block-d" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/22ExpensePersonal-mdpi.png')" rel="external"><img src="res/icon/android/22ExpensePersonal-mdpi.png" alt="Image 003" /></a>
+						</div>
+					</div>
+					<div class="ui-grid-c">
+						<div class="ui-block-a" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/10ExpenseDaily-mdpi.png" alt="Image 001" /></a>
+						</div>
+						<div class="ui-block-b" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/11ExpenseFood-mdpi.png" alt="Image 002" /></a>
+						</div>
+						<div class="ui-block-c" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/10ExpenseDaily-mdpi.png')" rel="external"><img src="res/icon/android/12ExpenseTransport-mdpi.png" alt="Image 003" /></a>
+						</div>
+						<div class="ui-block-d" align="center" style="width: 55px">
+							<a href="javascript:onClickCategoryImage('res/icon/android/12ExpenseTransport-mdpi.png')" rel="external"><img src="res/icon/android/12ExpenseTransport-mdpi.png" alt="Image 003" /></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- /popup categoryImage -->
+		
+		<script src="js/phetbud-category-detail.js"></script>
+	</div>
+	<!-- /page -->
+
+</body>
+</html>

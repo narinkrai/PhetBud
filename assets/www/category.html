@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Category</title>
+
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+</head>
+<body>
+
+	<div id="categoryPage" data-role="page" data-dom-cache="true">
+
+		<div data-role="header">
+			<a href="main2.html" data-icon="arrow-l" class="ui-btn-left">Back</a>
+			<h1>หมวดหมู่หลัก</h1>
+			
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" class="ui-btn-active ui-state-persist" onclick="onClickIncome(); return false" >รายจ่าย</a></li>
+					<li><a href="#" onclick="onClickExpense(); return false" >รายรับ</a></li>
+					<li><a href="#" onclick="onClickTransfer(); return false" >โอนยอดไป</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /header -->
+
+		<div id="div-categorylist" data-role="content">
+			<ul id="listview-cat" data-role="listview">
+			</ul>
+		</div>
+		<div id="div-hiddendialog" style="display: none;">
+			<a id="categoryDialog" href="categoryDialog.html" data-role="button" data-inline="true" data-rel="dialog" data-transition="pop" style="display: none;">Save</a>
+		</div>
+		<!-- /content -->
+
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<button type="button" name="budgetButton" value="กำหนดงบประมาณรายจ่าย" onclick="onClickBudget()">กำหนดงบประมาณรายจ่าย</button>
+			</div>
+		</div>
+		<!-- /footer -->
+		
+		<script src="js/phetbud-category.js"></script>
+	</div>
+	<!-- /page -->
+
+</body>
+</html>

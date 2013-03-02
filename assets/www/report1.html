@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="tis-620">
+<title>PHETBud Program</title>
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<script type="text/javascript" src="js/jquery.formatCurrency-1.4.0.js"></script>
+</head>
+<body> 
+<!-- Home -->
+<div data-role="page" id="report1Page">
+    <div data-theme="a" data-role="header">
+        <ul data-role="listview" data-divider-theme="b" data-inset="false" id="reportHeader">
+            <li data-theme="c">
+                แสดงข้อมูลช่วงวันที่
+            </li>
+        </ul>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview" data-divider-theme="b" data-inset="false" id="reportDetail">
+            <li data-role="list-divider" role="heading">
+                หมวดหมู่
+            </li>
+            <li data-theme="">
+				<div class="ui-grid-a">
+					<div class="ui-block-a" style="float: left">
+						<p id="pTotalCategoryType">expense</p>
+					</div>
+					<div class="ui-block-b" >
+						<p id="pTotalTransactionAmount" align="right">500</p>
+					</div>
+				</div>
+            </li>
+            <li data-theme="c">
+				<div class="ui-grid-a">
+					<div class="ui-block-a" style="float: left">
+						<p id="pTotalCategoryType">expense</p>
+					</div>
+					<div class="ui-block-b" >
+						<p id="pTotalTransactionAmount" align="right">500</p>
+					</div>
+				</div>
+            </li>
+        </ul>
+
+    </div>
+            <script src="js/phetbud-report-view1.js"></script>            
+
+</div>
+
+</body>
+</html>
