@@ -7,7 +7,7 @@ Phetchaburi Rajabhat University + Budgeting Controller
 
 Create a new app with the following repository:
 
-    https://github.com/phonegap/phonegap-start.git
+    https://github.com/narinkrai/PhetBud.git
 
 ## Run Application
 
